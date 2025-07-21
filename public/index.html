@@ -1,89 +1,224 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+<html lang="en">
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/11.10.0/firebase-app-compat.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/11.10.0/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/11.10.0/firebase-database-compat.js"></script>
-    <script defer src="/__/firebase/11.10.0/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/11.10.0/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/11.10.0/firebase-messaging-compat.js"></script>
-    <script defer src="/__/firebase/11.10.0/firebase-storage-compat.js"></script>
-    <script defer src="/__/firebase/11.10.0/firebase-analytics-compat.js"></script>
-    <script defer src="/__/firebase/11.10.0/firebase-remote-config-compat.js"></script>
-    <script defer src="/__/firebase/11.10.0/firebase-performance-compat.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="author" content="Lakshay Jain">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find My Bus</title>
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
+  <link rel="stylesheet" href="./css/style.css">
+
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <!-- Bebas Neue + Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Theme Color for Mobile Browser -->
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- SEO Robots -->
+  <meta name="robots" content="index, follow">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://find-my-bus-app.web.app/">
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Find My Bus – Bus Travel Made Easy">
+  <meta name="description"
+    content="Find My Bus is your smart travel companion to track Punjab buses. Find accurate bus schedules, timings, and route details.">
+  <meta name="keywords"
+    content="find my bus, punjab bus finder , schedule of punjab buses, track my bus, punjab buses, bus finder app, how to track buses in Punjab, find punjab buses, punjab buses timing app, punjab bus route app">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="FindMyBus - Bus Timings & Contact Info" />
+  <meta property="og:description"
+    content="Plan your bus journey with ease. View bus schedules, routes, and contact information. Get updates across Punjab Roadways & city routes." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://find-my-bus-app.web.app/">
+  <meta property="og:image" content="https://find-my-bus-app.web.app/cover-image.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://find-my-bus-app.web.app/">
+  <meta name="twitter:title" content="Track Punjab Buses – Find My Bus App">
+  <meta name="twitter:description"
+    content="Check bus schedules, route maps & depot contact info. Ideal for planning your journey." />
+  <meta name="twitter:image" content="https://find-my-bus-app.web.app/twitter-image.jpg">
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is Find My Bus?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Find My Bus is a mobile app that helps you find buses between two locations quickly and easily. It’s designed for convenient and real-time route discovery."
       }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
+    },
+    {
+      "@type": "Question",
+      "name": "How do I use Find My Bus?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Open the app, enter your source and destination cities, and view available bus routes instantly. You can also check crew info and recent searches."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is Find My Bus free to use?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, Find My Bus is completely free to download and use. There are no hidden charges for using its features."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Find My Bus show real-time information?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Currently, Find My Bus helps you discover bus routes and related info. Real-time tracking may be available in upcoming updates."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Where can I download Find My Bus?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can download Find My Bus from the Google Play Store. Just search for 'Find My Bus' and tap on 'Install'."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do you help in finding buses and provide book depot contact numbers?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, we help you find the right bus by route, location, or city. We also provide contact numbers of book depots to assist with ticket bookings or inquiries."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does Find My Bus require an internet connection?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, an internet connection is required to fetch route data and updates in Find My Bus."
+      }
+    }
+  ]
+}
+</script>
+
+  <!-- Review Schema -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "Find My Bus",
+  "description": "A simple and intuitive app to find buses between two locations with ease.",
+  "image": "https://find-my-bus-app.web.app/assets/findmybus_screenshot.png",
+  "brand": {
+    "@type": "Brand",
+    "name": "Find My Bus"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.6",
+    "reviewCount": "842"
+  },
+  "review": [
+    {
+      "@type": "Review",
+      "author": "Ananya Verma",
+      "datePublished": "2025-07-10",
+      "reviewBody": "Find My Bus is a must-have for daily commuters. Super clean UI and easy to use!",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5"
+      }
+    },
+    {
+      "@type": "Review",
+      "author": "Rohit Sharma",
+      "datePublished": "2025-07-12",
+      "reviewBody": "Saved me so much time finding local routes. Love the app!",
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "4"
+      }
+    }
+  ]
+}
+</script>
+
+  <!-- Bradcrumb Schema -->
+
+  <script type="application/ld+json">
+              {
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                  {
+                    "@type": "ListItem",
+                    "position": 1,
+                    "name": "Home",
+                    "item": "https://find-my-bus-app.web.app/"
+                  }
+              </script>
+
+</head>
+
+<body>
+  <script src="./js/script.js"></script>
+
+  <div class="container">
+    <div class="content-wrapper">
+      <div class="app-showcase">
+        <img src="assests/findmybus_screenshot.png"
+          alt="Find My Bus app UI showing bus tracking and route search interface" class="app-demo-img">
+      </div>
+      <div class="content">
+        <div class="logo">
+          <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M12 2C12 2 19 8 19 14C19 18.4183 15.4183 22 11 22C6.58172 22 3 18.4183 3 14C3 11 5 8 7 6C7 8 8 10 10 10C10 7 11 4 12 2Z"
+              fill="currentColor" />
+          </svg>
+        </div>
+
+        <h1>Find My Bus</h1>
+        <p class="subtitle">Bus Travel Made Easy</p>
+
+        <div class="download-buttons">
+          <a href="https://apps.apple.com/app/ritualz/id6443862619" class="download-btn app-store"
+            aria-label="Download on App Store">
+            <svg viewBox="0 0 384 512" fill="currentColor">
+              <path
+                d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z" />
+            </svg>
+            <span>App Store</span>
+          </a>
+          <a href="https://play.google.com/store/apps/details?id=app.mitchkoko.ritualzandroid"
+            class="download-btn play-store" aria-label="Get it on Google Play">
+            <svg viewBox="0 0 512 512" fill="currentColor">
+              <path
+                d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z" />
+            </svg>
+            <span>Google Play</span>
+          </a>
+        </div>
+
+        <p class="footer-note">Created by Lakshay Jain</p>
+      </div>
     </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+  </div>
+</body>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
 </html>
